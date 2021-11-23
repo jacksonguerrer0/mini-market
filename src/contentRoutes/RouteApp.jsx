@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NoMatch from '../container/NoMatch'
 import App from '../container/App'
 import Detail from '../components/Detail'
 import ShopingCart from '../components/ShopingCart'
+import { getDataApi } from '../helpers/functions'
+
 const RouteApp = () => {
-  console.log('ok')
+
   return (
     <BrowserRouter>
       <Routes>
