@@ -1,17 +1,18 @@
 import React, {useEffect, useState} from 'react'
-import { Outlet } from 'react-router'
+import { Outlet, useLocation } from 'react-router'
 import './app.scss'
 import { addQuantityLocalSotrage } from '../helpers/functions'
 import {  useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const App = () => {
   const { products } = useSelector(state => state.products)
   const [productsCart, setProductsCart] = useState(null)
-
+  const location = useLocation()
   const handleAddCart = (ele) => {
     addQuantityLocalSotrage(productsCart, ele)
   }
-  
+  console.log(location)
   useEffect(() => {
     setProductsCart(JSON.parse(localStorage.getItem('cart')))
   }, [])
@@ -20,7 +21,7 @@ const App = () => {
       <header>
         <img src="https://cdn-icons-png.flaticon.com/512/609/609752.png" alt="logo" />
         <div>
-        <i className="fas fa-shopping-cart"></i> $###
+        <i className="fas fa-shopping-cart"></i> <p>$###</p>
         </div>
       </header>
       <Outlet />

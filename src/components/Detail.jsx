@@ -1,10 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './detail.scss'
 const Detail = () => {
-
   return (
     <aside>
-      <h2>Product</h2>
+      <h2>Product <Link to='/'><i className="fas fa-chevron-left"></i></Link></h2>
       <hr />
       <article>
         <div className='product-hero'>

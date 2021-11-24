@@ -2,6 +2,17 @@
 @import '../style/mixin';
 
 aside{
+  >h2{
+    position: relative;
+    i{
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 2rem; 
+      color: $color-primary;
+      cursor: pointer
+    }
+  }
   >article{
     @include scrollYProducts;
 

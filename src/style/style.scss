@@ -17,9 +17,16 @@ body{
 }
 p{
   color: $color-gray;
+  font-size: clamp(1.2rem, 4vw, 1.4rem);
 }
 hr{
   border: 1px solid $color-secondary;
+}
+h2{
+  font-size: 2rem;
+}
+h3{
+  font-size: 1.5rem;
 }
 h2, h3, h4{
   color: $color-primary;
