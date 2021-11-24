@@ -3,14 +3,14 @@ import types from "./types/types";
 // Variables
 const initialState = {
   products: [],
-  productsCart: []
+  cart : []
 }
 
 
 // Reducer
 const productsDucks = (state= initialState, action) =>{
   switch (action.type) {
-    case types.getProducts:
+    case types.GET_PRODUCTS:
     return {
       ...state,
       products: action.payload
@@ -27,6 +27,6 @@ export default productsDucks
 
 // Actions
 export const saveProducts = (products) => ({
-  type: types.getProducts,
+  type: types.GET_PRODUCTS,
   payload: products
 })

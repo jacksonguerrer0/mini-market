@@ -21,6 +21,10 @@ p{
 hr{
   border: 1px solid $color-secondary;
 }
-h2{
+h2, h3, h4{
   color: $color-primary;
+}
+img{
+  width: 100%;
+  height: auto;
 }

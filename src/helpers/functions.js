@@ -6,3 +6,7 @@ export const getDataApi = async () => {
   const data =  res.data
   return data
 }
+
+export const addQuantityLocalSotrage = (products, product) => {
+
+}

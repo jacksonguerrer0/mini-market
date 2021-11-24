@@ -4,7 +4,7 @@ import thunk from 'redux-thunk'
 import productsDucks from './productsDucks';
 
 const rootReducer = combineReducers({
-  products: productsDucks
+  products: productsDucks,
 })
 
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
