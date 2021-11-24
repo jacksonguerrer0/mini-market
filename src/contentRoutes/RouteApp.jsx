@@ -4,9 +4,15 @@ import NoMatch from '../container/NoMatch'
 import App from '../container/App'
 import Detail from '../components/Detail'
 import ShopingCart from '../components/ShopingCart'
+import { getDataApi } from '../helpers/functions'
+import { saveProducts } from '../redux/productsDucks'
+import { useDispatch } from 'react-redux'
 
 const RouteApp = () => {
-
+  const dispatch = useDispatch()
+  useEffect(() => {
+    getDataApi().then(res => dispatch(saveProducts(res)))
+  }, [dispatch])
   return (
     <BrowserRouter>
       <Routes>
