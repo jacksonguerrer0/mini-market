@@ -12,7 +12,6 @@ const App = () => {
   const handleAddCart = (ele) => {
     addQuantityLocalSotrage(productsCart, ele)
   }
-  console.log(location)
   useEffect(() => {
     setProductsCart(JSON.parse(localStorage.getItem('cart')))
   }, [])
@@ -20,8 +19,11 @@ const App = () => {
     <div className='app-container'>
       <header>
         <img src="https://cdn-icons-png.flaticon.com/512/609/609752.png" alt="logo" />
-        <div>
-        <i className="fas fa-shopping-cart"></i> <p>$###</p>
+        <div className='cart cart-shoping'>
+          <i className="fas fa-shopping-cart"></i><p>$###</p>
+          {
+            true && <p>X</p>
+          }
         </div>
       </header>
       <Outlet />
