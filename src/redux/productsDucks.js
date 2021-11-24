@@ -11,7 +11,10 @@ const initialState = {
 const productsDucks = (state= initialState, action) =>{
   switch (action.type) {
     case types.getProducts:
-    return action.payload;
+    return {
+      ...state,
+      products: action.payload
+    };
   
     default:
       return state;
@@ -23,4 +26,7 @@ export default productsDucks
 
 
 // Actions
-
+export const saveProducts = (products) => ({
+  type: types.getProducts,
+  payload: products
+})

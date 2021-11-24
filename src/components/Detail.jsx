@@ -3,7 +3,9 @@ import React from 'react'
 const Detail = () => {
   return (
     <div>
-      detalle de producto
+      <h2>Product</h2>
+      <hr />
+      
     </div>
   )
 }

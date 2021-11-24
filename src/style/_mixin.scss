@@ -1,0 +1,12 @@
+@import '../style/variables';
+
+@mixin cardProduct($color-shadow: $color-primary, $color-border: $color-gray) {
+  width: 100%;
+  border: $color-border 2px solid;
+  cursor: pointer;
+  &:hover{
+    box-shadow: $box-shadow $color-shadow;
+    border: $color-shadow 2px solid;
+
+  }
+}

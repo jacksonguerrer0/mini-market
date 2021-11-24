@@ -1,12 +1,26 @@
-$color-primary: '#A61ABB';
-$color-secondary: '#F5C7FD';
-$color-gray: '#858585';
-$color-black: '#060606';
-$background-primary: '#fff';
-$background-secondary: '#EEEEEE';
+@import '../style/variables';
 
-
-h1{
-  color: red;
-  background-color: black;
+html{
+  box-sizing: border-box;
+}
+*,
+*::after,
+*::before{
+  box-sizing: inherit;
+}
+body{
+  margin: 0;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  font-size: 18px;
+  color: $color-white; 
+}
+p{
+  color: $color-gray;
+}
+hr{
+  border: 1px solid $color-secondary;
+}
+h2{
+  color: $color-primary;
 }

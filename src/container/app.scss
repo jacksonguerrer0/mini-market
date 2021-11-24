@@ -1,0 +1,46 @@
+@import '../style/variables';
+@import '../style/mixin';
+
+
+.app-container{
+  display: flex;
+  flex-flow: column wrap;
+  header{
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    img{
+      width: 50px;
+      height: auto;
+      object-fit: cover;
+    }
+    div{
+      height: 2rem;
+      align-self: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.1rem 0.3rem;
+      background-color: $color-primary;
+    }
+  }
+  
+  > section{
+    grid-area: products;
+    > section{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+      img{
+        @include cardProduct;
+        padding: 0.5rem;
+        object-fit: cover;
+      }
+    } 
+  }
+  > aside{
+    grid-area: products-info;
+    margin-top: 2rem;
+  }
+}
