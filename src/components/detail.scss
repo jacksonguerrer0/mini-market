@@ -14,7 +14,8 @@ aside{
     }
   }
   >article{
-    @include scrollYProducts;
+    max-height: 400px;
+    overflow-y: auto;
 
     .product-hero{
       display: flex;
@@ -65,5 +66,9 @@ aside{
   
       }
     } 
+    @media  screen and (min-width: 1024px) {
+      max-height: 800px;
+      overflow-y: auto;
+    }
   }
 }

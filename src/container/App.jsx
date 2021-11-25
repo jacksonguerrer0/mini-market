@@ -25,13 +25,12 @@ const App = () => {
   useEffect(() => {
     dispatch(addCart(getCartLocalStorage()))
   }, [dispatch])
-
   return (
     <div className='app-container'>
       <header>
         <img src="https://cdn-icons-png.flaticon.com/512/609/609752.png" alt="logo" />
         <div className={`cart ${cart.length > 0 &&'cart-shoping'}`}>
-          <i className="fas fa-shopping-cart"></i><p>{`$${getTotalCart(cart)}`}</p>
+          <i className="fas fa-shopping-cart"></i><p>{`$${getTotalCart(cart)}`}.00</p>
           {
             cart.length > 0 && <p onClick={handleDeleteAllCart}>X</p>
           }

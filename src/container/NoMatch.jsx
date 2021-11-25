@@ -2,8 +2,8 @@ import React from 'react'
 
 const NoMatch = () => {
   return (
-    <div>
-      <h1>Pagina no existe ☹</h1>
+    <div style={{backgroundColor:'#0005'}}>
+      <h1 style={{textAlign: 'center'}}>Pagina no existe ☹</h1>
     </div>
   )
 }
