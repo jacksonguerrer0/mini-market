@@ -5,15 +5,15 @@
   div{
     display: flex;
     position: absolute;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: clamp(1.5rem, 10vw, 2.5rem);
+    height: clamp(1.5rem, 10vw, 2.5rem);
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     left: 0.5rem;
     top: 0.5rem;
     background-color: $color-shadow;
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   img{
     width: 100%;
