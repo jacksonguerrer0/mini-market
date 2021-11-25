@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useParams } from 'react-router'
 import './detail.scss'
+import { useSelector } from 'react-redux'
 const Detail = () => {
+  const { id } = useParams()
+  const [product, setProduct] = useState(null)
+  const { cart } = useSelector(state => state.products)
+
+  useEffect(() => {
+    // const productDetail = cart.find(ele => ele.id === id)
+    // setProduct(productDetail)
+  }, [id, cart])
+  console.log(product, 'detail')
   return (
     <aside>
       <h2>Product <Link to='/'><i className="fas fa-chevron-left"></i></Link></h2>
