@@ -8,7 +8,6 @@ import { quantityDecimals } from '../helpers/functions'
 
 const App = () => {
   const { products, cart } = useSelector(state => state.products)
-
   const dispatch = useDispatch()
 
   const handleAddCart = (id) => {
@@ -17,14 +16,15 @@ const App = () => {
   const handleDeleteAllCart = () => {
     dispatch({type: types.CLEAR_CART})
   }
-  useEffect(() => {
-    // setProductsCart(JSON.parse(localStorage.getItem('cart')))
-  }, [])
-
   const renderQuantity = (id) => {
     let ele = cart.find(ele => ele.id === id)
     return ele && <div title={ele.quantity}>{quantityDecimals(ele.quantity, 99)}</div>
   }
+  
+  useEffect(() => {
+    // setProductsCart(JSON.parse(localStorage.getItem('cart')))
+  }, [])
+
   return (
     <div className='app-container'>
       <header>

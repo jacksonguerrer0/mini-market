@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { quantityDecimals } from '../helpers/functions'
 import './shopingCart.scss'
+
 const ShopingCart = () => {
   const { cart } = useSelector(state => state.products)
   return (

@@ -14,3 +14,6 @@ export const quantityDecimals = (num, quantity) => {
     return quantity
   }
 }
+export const getTotalCart = (products) => {
+  
+}
