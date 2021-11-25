@@ -17,7 +17,6 @@ const Detail = () => {
   const handleRemoveProductCart = () => {
     dispatch(deleteProductCart(product?.id))
   }
-  
   useEffect(() => {
     const productDetail = cart.find(ele => ele.id === parseInt(id))
     setProduct(productDetail)

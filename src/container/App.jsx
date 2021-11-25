@@ -4,7 +4,7 @@ import './app.scss'
 import {  useDispatch, useSelector } from 'react-redux'
 import { addProductCart } from '../redux/productsDucks'
 import types from '../redux/types/types'
-import { quantityDecimals } from '../helpers/functions'
+import { getTotalCart, quantityDecimals } from '../helpers/functions'
 
 const App = () => {
   const { products, cart } = useSelector(state => state.products)
@@ -20,7 +20,7 @@ const App = () => {
     let ele = cart.find(ele => ele.id === id)
     return ele && <div title={ele.quantity}>{quantityDecimals(ele.quantity, 99)}</div>
   }
-  
+
   useEffect(() => {
     // setProductsCart(JSON.parse(localStorage.getItem('cart')))
   }, [])
@@ -30,7 +30,7 @@ const App = () => {
       <header>
         <img src="https://cdn-icons-png.flaticon.com/512/609/609752.png" alt="logo" />
         <div className={`cart ${cart.length > 0 &&'cart-shoping'}`}>
-          <i className="fas fa-shopping-cart"></i><p>$###</p>
+          <i className="fas fa-shopping-cart"></i><p>{`$${getTotalCart(cart)}`}</p>
           {
             cart.length > 0 && <p onClick={handleDeleteAllCart}>X</p>
           }

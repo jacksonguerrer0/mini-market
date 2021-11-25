@@ -15,5 +15,9 @@ export const quantityDecimals = (num, quantity) => {
   }
 }
 export const getTotalCart = (products) => {
-  
+  let total = 0
+  products.forEach(ele => {
+    total = (ele.quantity * ele.precio) +total
+  });
+  return total
 }

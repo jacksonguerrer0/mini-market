@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { quantityDecimals } from '../helpers/functions'
+import { getTotalCart, quantityDecimals } from '../helpers/functions'
 import './shopingCart.scss'
 
 const ShopingCart = () => {
@@ -25,11 +25,7 @@ const ShopingCart = () => {
         }
 
       </section>
-      <div className='total-cart'><p><b>Total</b>:</p><h3>{
-          cart.forEach(ele => {
-            return ele.precio 
-          })
-        }</h3></div>
+      <div className='total-cart'><p><b>Total</b>:</p><h3>{`$${getTotalCart(cart)}`}</h3></div>
     </aside>
   )
 }
