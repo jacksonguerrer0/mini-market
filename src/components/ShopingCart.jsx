@@ -25,7 +25,10 @@ const ShopingCart = () => {
         }
 
       </section>
-      <div className='total-cart'><p><b>Total</b>:</p><h3>{`$${getTotalCart(cart)}`}.00</h3></div>
+      {
+        cart.length > 0 &&  <div className='total-cart'><p><b>Total</b>:</p><h3>{`$${getTotalCart(cart)}`}.00</h3></div>
+
+      }
     </aside>
   )
 }
