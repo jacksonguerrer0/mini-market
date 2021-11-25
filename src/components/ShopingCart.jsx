@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import './shopingCart.scss'
 const ShopingCart = () => {
   const { cart } = useSelector(state => state.products)
@@ -14,10 +15,10 @@ const ShopingCart = () => {
         {
           cart.length > 0
           ? cart.map(ele => (
-            <article key={ele.id}>
+            <Link key={ele.id} to={`detail/${ele.id}`}>
               <div>{ele.quantity}</div>
               <img src={ele?.imagen} alt={ele.nombre} />
-            </article>
+            </Link>
             ))
           : <p><small>Press a product</small></p>
         }

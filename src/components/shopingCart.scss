@@ -4,7 +4,7 @@
 aside{
   > section{
     @include scrollYProducts;
-    > article{
+    > a{
       display: flex;
       justify-content: flex-start;
       align-items: center;
