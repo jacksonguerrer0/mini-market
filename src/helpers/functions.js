@@ -21,3 +21,12 @@ export const getTotalCart = (products) => {
   });
   return total
 }
+
+export const setCartLocalStorage = (products) => {
+  localStorage.setItem('cart', JSON.stringify(products))
+}
+export const getCartLocalStorage = () => {
+  return JSON.parse(localStorage.getItem('cart'))
+  ?  JSON.parse(localStorage.getItem('cart'))
+  : []
+}

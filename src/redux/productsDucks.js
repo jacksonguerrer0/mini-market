@@ -1,3 +1,4 @@
+import { setCartLocalStorage } from "../helpers/functions";
 import types from "./types/types";
 
 // Variables
@@ -58,15 +59,13 @@ export const addProductCart = (id) => (dispatch, selector) => {
     : ele
   })
   const productCartInitial = [...products.cart, {...product, quantity: 1}]
-
-  dispatch(addCart(
-    itemCart 
-    ? productCarNoDuplicates
-    : productCartInitial
-  ))
-
+  const newProductsCart = itemCart 
+  ? productCarNoDuplicates
+  : productCartInitial
+  dispatch(addCart(newProductsCart))
+  setCartLocalStorage(newProductsCart)
 }
-const addCart = (product) => ({
+export const addCart = (product) => ({
   type: types.ADD_PRODUCT_CART,
   payload: product
 })
@@ -80,12 +79,11 @@ export const deleteProductCart = (id) => (dispatch, selector) =>{
     : ele
   })
   const filterProduct = products.cart.filter(ele => ele.id !== product.id)
-
-  dispatch(deleteProduct(
-    product.quantity > 1
-    ? productsCartDelete
-    : filterProduct
-  ))
+  const newProductsCart = product.quantity > 1
+  ? productsCartDelete
+  : filterProduct
+  dispatch(deleteProduct(newProductsCart))
+  setCartLocalStorage(newProductsCart)
 }
 const deleteProduct = (product) => ({
   type: types.DELETE_ONE_PRODUCT_CART,

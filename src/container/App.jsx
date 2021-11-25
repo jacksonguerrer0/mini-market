@@ -2,9 +2,9 @@ import React, {useEffect} from 'react'
 import { Outlet } from 'react-router'
 import './app.scss'
 import {  useDispatch, useSelector } from 'react-redux'
-import { addProductCart } from '../redux/productsDucks'
+import { addCart, addProductCart } from '../redux/productsDucks'
 import types from '../redux/types/types'
-import { getTotalCart, quantityDecimals } from '../helpers/functions'
+import { getCartLocalStorage, getTotalCart, quantityDecimals, setCartLocalStorage } from '../helpers/functions'
 
 const App = () => {
   const { products, cart } = useSelector(state => state.products)
@@ -15,6 +15,7 @@ const App = () => {
   }
   const handleDeleteAllCart = () => {
     dispatch({type: types.CLEAR_CART})
+    setCartLocalStorage([])
   }
   const renderQuantity = (id) => {
     let ele = cart.find(ele => ele.id === id)
@@ -22,8 +23,8 @@ const App = () => {
   }
 
   useEffect(() => {
-    // setProductsCart(JSON.parse(localStorage.getItem('cart')))
-  }, [])
+    dispatch(addCart(getCartLocalStorage()))
+  }, [dispatch])
 
   return (
     <div className='app-container'>
