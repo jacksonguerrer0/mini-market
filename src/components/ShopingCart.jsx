@@ -22,12 +22,13 @@ const ShopingCart = () => {
             ))
           : <p><small>Press a product</small></p>
         }
-        <div><p><b>Total</b>:</p><h3>{
+
+      </section>
+      <div className='total-cart'><p><b>Total</b>:</p><h3>{
           cart.forEach(ele => {
             return ele.precio 
           })
         }</h3></div>
-      </section>
     </aside>
   )
 }

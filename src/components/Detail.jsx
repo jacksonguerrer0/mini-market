@@ -11,12 +11,12 @@ const Detail = () => {
   useEffect(() => {
     const productDetail = cart.find(ele => ele.id === parseInt(id))
     setProduct(productDetail)
-  }, [id, cart])
-  console.log(product, 'detail')
-  console.log(parseInt(id))
-  if(!product){
-    navigate(-1)
-  }
+    if(!productDetail){
+      navigate(-1)
+    }
+  }, [id, cart, navigate])
+  
+
   return (
     <aside>
       <h2>Product <Link to='/'><i className="fas fa-chevron-left"></i></Link></h2>

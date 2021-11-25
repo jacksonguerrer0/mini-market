@@ -29,10 +29,10 @@ aside{
         height: auto;
       }
     }
-    >div{
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-    }
+  }
+  .total-cart{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 }

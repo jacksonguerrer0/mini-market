@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import { Outlet } from 'react-router'
 import './app.scss'
 import {  useDispatch, useSelector } from 'react-redux'
@@ -43,11 +43,11 @@ const App = () => {
         <section>
           {
             products.map((ele, i) => (
-              <article key={ele.id}>
+              <article key={ele.id} onClick={(e) => handleAddCart(ele.id)}>
                 {
                   renderQuantity(ele.id)
                 }
-                <img src={ele.imagen} alt={ele.nombre} onClick={(e) => handleAddCart(ele.id)}/>
+                <img src={ele.imagen} alt={ele.nombre}/>
               </article>
             ))
           }
