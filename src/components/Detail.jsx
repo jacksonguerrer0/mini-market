@@ -1,29 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 import './detail.scss'
 import { useSelector } from 'react-redux'
 const Detail = () => {
   const { id } = useParams()
   const [product, setProduct] = useState(null)
   const { cart } = useSelector(state => state.products)
-
+  const navigate = useNavigate()
   useEffect(() => {
-    // const productDetail = cart.find(ele => ele.id === id)
-    // setProduct(productDetail)
+    const productDetail = cart.find(ele => ele.id === parseInt(id))
+    setProduct(productDetail)
   }, [id, cart])
   console.log(product, 'detail')
+  console.log(parseInt(id))
+  if(!product){
+    navigate(-1)
+  }
   return (
     <aside>
       <h2>Product <Link to='/'><i className="fas fa-chevron-left"></i></Link></h2>
       <hr />
       <article>
         <div className='product-hero'>
-          <div>##</div>
-          <img src="https://cdn-icons-png.flaticon.com/512/609/609752.png" alt="" />
+          <div>{product?.quantity}</div>
+          <img src={product?.imagen} alt={product?.nombre} />
         </div>
         <div className='product-info'>
-          <div><p><b>Guajolota</b>-</p><h3>$##</h3></div>
+          <div><p><b>{product?.nombre}</b>-</p><h3>{'$'+ product?.precio * product?.quantity} </h3></div>
           <div>
             <button>-</button><button>+</button>
           </div>

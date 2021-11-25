@@ -23,7 +23,6 @@ const App = () => {
 
   const renderQuantity = (id) => {
     let ele = cart.find(ele => ele.id === id)
-    console.log(ele,'dfdfd')
     return ele && <div title={ele.quantity}>{quantityDecimals(ele.quantity, 99)}</div>
   }
   return (
