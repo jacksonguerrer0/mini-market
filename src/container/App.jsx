@@ -4,6 +4,7 @@ import './app.scss'
 import {  useDispatch, useSelector } from 'react-redux'
 import { addProductCart } from '../redux/productsDucks'
 import types from '../redux/types/types'
+import { quantityDecimals } from '../helpers/functions'
 
 const App = () => {
   const { products, cart } = useSelector(state => state.products)
@@ -19,6 +20,12 @@ const App = () => {
   useEffect(() => {
     // setProductsCart(JSON.parse(localStorage.getItem('cart')))
   }, [])
+
+  const renderQuantity = (id) => {
+    let ele = cart.find(ele => ele.id === id)
+    console.log(ele,'dfdfd')
+    return ele && <div title={ele.quantity}>{quantityDecimals(ele.quantity, 99)}</div>
+  }
   return (
     <div className='app-container'>
       <header>
@@ -36,9 +43,11 @@ const App = () => {
         <hr />
         <section>
           {
-            products.map(ele => (
+            products.map((ele, i) => (
               <article key={ele.id}>
-                {/* {productsCart[ele.cart] > 0 && <div>{productsCart[ele.cart]}</div>} */}
+                {
+                  renderQuantity(ele.id)
+                }
                 <img src={ele.imagen} alt={ele.nombre} onClick={(e) => handleAddCart(ele.id)}/>
               </article>
             ))

@@ -7,6 +7,10 @@ export const getDataApi = async () => {
   return data
 }
 
-export const addQuantityLocalSotrage = (products, product) => {
-
+export const quantityDecimals = (num, quantity) => {
+  if(num < quantity){
+    return num
+  }else{
+    return quantity
+  }
 }
