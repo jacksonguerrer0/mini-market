@@ -20,6 +20,11 @@ const productsDucks = (state= initialState, action) =>{
         ...state,
         cart: action.payload
       }
+    case types.CLEAR_CART:
+      return {
+        ...state,
+        cart: []
+      }
     default:
       return state;
   }
