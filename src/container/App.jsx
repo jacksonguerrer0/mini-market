@@ -2,18 +2,20 @@ import React, {useEffect, useState} from 'react'
 import { Outlet, useLocation } from 'react-router'
 import './app.scss'
 import { addQuantityLocalSotrage } from '../helpers/functions'
-import {  useSelector } from 'react-redux'
+import {  useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { addProductCart } from '../redux/productsDucks'
 
 const App = () => {
   const { products } = useSelector(state => state.products)
   const [productsCart, setProductsCart] = useState(null)
-  const location = useLocation()
-  const handleAddCart = (ele) => {
-    addQuantityLocalSotrage(productsCart, ele)
+  const dispatch = useDispatch()
+
+  const handleAddCart = (id) => {
+    dispatch(addProductCart(id))
   }
   useEffect(() => {
-    setProductsCart(JSON.parse(localStorage.getItem('cart')))
+    // setProductsCart(JSON.parse(localStorage.getItem('cart')))
   }, [])
   return (
     <div className='app-container'>
@@ -35,7 +37,7 @@ const App = () => {
             products.map(ele => (
               <article key={ele.id}>
                 {/* {productsCart[ele.cart] > 0 && <div>{productsCart[ele.cart]}</div>} */}
-                <img src={ele.imagen} alt={ele.nombre} onClick={(e) => handleAddCart(ele)}/>
+                <img src={ele.imagen} alt={ele.nombre} onClick={(e) => handleAddCart(ele.id)}/>
               </article>
             ))
           }

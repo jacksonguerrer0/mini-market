@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux'
 
 const RouteApp = () => {
   const dispatch = useDispatch()
+  
   useEffect(() => {
     getDataApi().then(res => dispatch(saveProducts(res)))
   }, [dispatch])
