@@ -18,11 +18,13 @@ const ShopingCart = () => {
       publicKey: 'pub_test_AQOb9XRmok39xbAWMNGl59hTROmT2vSH',
       redirectUrl: 'https://minimarket-guajolotas.surge.sh/',
     })
+    localStorage.setItem('cart', JSON.stringify([]))
     checkout.open(function ( result ) {
       var transaction = result.transaction
       console.log('Transaction ID: ', transaction.id)
       console.log('Transaction object: ', transaction)
     })
+
   }
   return (
     <aside>
@@ -41,14 +43,14 @@ const ShopingCart = () => {
             ))
           : <p><small>Press a product</small></p>
         }
-      <form onSubmit={handlePay}>
-      <button>PAGAR</button>
-      </form>
       </section>
       {
         cart.length > 0 &&  <div className='total-cart'><p><b>Total</b>:</p><h3>{`$${getTotalCart(cart)}`}.00 MXN</h3></div>
 
       }
+      <form onSubmit={handlePay}>
+      <button>PAGAR</button>
+      </form>
     </aside>
   )
 }

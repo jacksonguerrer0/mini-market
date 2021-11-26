@@ -40,4 +40,7 @@ aside{
     justify-content: flex-end;
     align-items: center;
   }
+  >form{
+    @include contentFormPay
+  }
 }
