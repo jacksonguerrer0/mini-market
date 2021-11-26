@@ -1,7 +1,7 @@
 # Mini Market
 
 Mini proyecto funcional que todos los requisitos para un Ecommerce, puedes guardar porductos en el carrito, agregar y eliminar. Los productos del carrito se mantienen gracias al localStorage.
-[Mira la app](google.com)
+[Mira la app](https://minimarket-guajolotas.surge.sh/)
 ## ¿Eres dev?
 Una vez descargado o clonado el repositorio el siguiente paso es instalar las dependencias con el manejador paquetes que mas te guste. Ejecuta `npm install` ó `yarn`.
 Lugo de tener instalado las dependencias cree un servidor local. Ejecuta `npm run start` ó `yarn start`.

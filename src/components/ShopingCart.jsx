@@ -16,7 +16,7 @@ const ShopingCart = () => {
       amountInCents: total * 18200 ,
       reference: `jack_${reference}`,
       publicKey: 'pub_test_AQOb9XRmok39xbAWMNGl59hTROmT2vSH',
-      redirectUrl: 'https://docs.wompi.co/docs/en/metodos-de-pago',
+      redirectUrl: 'https://minimarket-guajolotas.surge.sh/',
     })
     checkout.open(function ( result ) {
       var transaction = result.transaction
