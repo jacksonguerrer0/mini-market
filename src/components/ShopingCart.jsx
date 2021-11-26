@@ -48,9 +48,11 @@ const ShopingCart = () => {
         cart.length > 0 &&  <div className='total-cart'><p><b>Total</b>:</p><h3>{`$${getTotalCart(cart)}`}.00 MXN</h3></div>
 
       }
-      <form onSubmit={handlePay}>
-      <button>PAGAR</button>
-      </form>
+      {
+        cart.length > 0 &&    <form onSubmit={handlePay}>
+        <button>PAGAR</button>
+        </form>
+      }
     </aside>
   )
 }
